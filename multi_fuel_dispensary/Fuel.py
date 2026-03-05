@@ -11,7 +11,7 @@ class Fuel:
     def set_fuel_type(self, fuel_type):
         if not isinstance(fuel_type, str):
             raise TypeError("Fuel type must be a string")
-        valid_fuel_types = ("petrol", "diesel", "kerosene")
+        valid_fuel_types = ("petrol", "diesel", "kerosene", "Gas")
         fuel_type = fuel_type.lower().strip()
         if fuel_type not in valid_fuel_types:
             raise ValueError(f"Invalid fuel type. Must be one of {valid_fuel_types}")
