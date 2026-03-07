@@ -1,4 +1,3 @@
-# Dispenser.py
 from multi_fuel_dispensary.Fuel import Fuel
 
 class Dispenser:

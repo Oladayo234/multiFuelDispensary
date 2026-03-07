@@ -11,21 +11,20 @@ class Fuel:
     def set_fuel_type(self, fuel_type):
         if not isinstance(fuel_type, str):
             raise TypeError("Fuel type must be a string")
-        valid_fuel_types = ("petrol", "diesel", "kerosene", "Gas")
+        valid_fuel_types = ("petrol", "diesel", "kerosene", "gas")
         fuel_type = fuel_type.lower().strip()
         if fuel_type not in valid_fuel_types:
             raise ValueError(f"Invalid fuel type. Must be one of {valid_fuel_types}")
-        if self.__fuel_type != fuel_type:
-            self.__fuel_type = fuel_type
+        self.__fuel_type = fuel_type
 
     def set_price_per_liter(self, price_per_liter):
         if price_per_liter <= 0.0:
-            raise ValueError("Price per liter must be greater than zero")
+            raise ValueError("Price per liter must be positive")
         self.__price_per_liter = price_per_liter
 
     def set_quantity(self, quantity):
         if quantity < 0.0:
-            raise ValueError("Quantity must be greater than zero")
+            raise ValueError("Quantity cannot be negative")
         self.quantity = quantity
 
     def get_quantity(self):
@@ -36,3 +35,6 @@ class Fuel:
 
     def get_price_per_liter(self):
         return self.__price_per_liter
+
+    def __str__(self):
+        return f"{self.__fuel_type.capitalize()} - {self.quantity}L @ N{self.__price_per_liter}/L"
