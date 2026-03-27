@@ -1,5 +1,10 @@
+import json
+import os
+
 class Fuel:
-    def __init__(self, quantity:float, fuel_type:str, price_per_liter:float):
+    FUEL_TYPES_STORE = "fuel_types.json"
+
+    def __init__(self, quantity: float, fuel_type: str, price_per_liter: float):
         self.quantity = 0.0
         self.__fuel_type = ""
         self.__price_per_liter = 0.0
@@ -19,7 +24,7 @@ class Fuel:
 
     def set_price_per_liter(self, price_per_liter):
         if price_per_liter <= 0.0:
-            raise ValueError("Price per liter must be positive")
+            raise ValueError("Price per liter must be greater than zero")
         self.__price_per_liter = price_per_liter
 
     def set_quantity(self, quantity):
@@ -35,6 +40,3 @@ class Fuel:
 
     def get_price_per_liter(self):
         return self.__price_per_liter
-
-    def __str__(self):
-        return f"{self.__fuel_type.capitalize()} - {self.quantity}L @ N{self.__price_per_liter}/L"

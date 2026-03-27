@@ -1,3 +1,4 @@
+import os
 import unittest
 from multi_fuel_dispensary.Dispenser import Dispenser
 from multi_fuel_dispensary.Fuel import Fuel
@@ -8,6 +9,12 @@ class TestDispenser(unittest.TestCase):
         self.dispenser = Dispenser()
         self.petrol = Fuel(quantity=50.0, fuel_type="petrol", price_per_liter=65.50)
         self.diesel = Fuel(quantity=50.0, fuel_type="diesel", price_per_liter=74.50)
+
+    def tearDown(self):
+        if os.path.exists("fuel_store.json"):
+            os.remove("fuel_store.json")
+        if os.path.exists("transaction_history.txt"):
+            os.remove("transaction_history.txt")
 
     def test_that_dispenser_can_add_fuel(self):
         self.dispenser.add_fuel(self.petrol)
