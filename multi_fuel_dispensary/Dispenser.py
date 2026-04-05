@@ -4,7 +4,7 @@ import datetime
 from multi_fuel_dispensary.Fuel import Fuel
 
 class Dispenser:
-    FUEL_STORE = "fuel_store.json"
+    FUEL_STORE = "fuel_store.txt"
 
     def __init__(self):
         self.__fuel_inventory = {}

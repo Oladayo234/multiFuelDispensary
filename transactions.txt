@@ -1,0 +1,2 @@
+{"fuel_type": "petrol", "liters": 654.0, "total": 42510.0, "timestamp": "2026-03-12 23:11:26"}
+{"fuel_type": "petrol", "liters": 76.92307692307692, "total": 5000.0, "timestamp": "2026-03-12 23:11:58"}

@@ -1,0 +1,7 @@
+{
+    "petrol": {
+        "fuel_type": "petrol",
+        "quantity": 10000.0,
+        "price_per_liter": 45.0
+    }
+}
